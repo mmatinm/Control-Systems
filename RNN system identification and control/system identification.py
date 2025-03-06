@@ -1,4 +1,7 @@
-#pip install control    #if needed
+'''
+if needed
+pip install control  
+'''
 
 import numpy as np
 import pandas as pd
@@ -14,7 +17,7 @@ import tensorflow as tf
 from scipy.signal import sawtooth
 
 
-######################## Define the mass-spring-damper system parameters
+########################### Define the mass-spring-damper system parameters
 
 m = 24
 c = 110
@@ -74,7 +77,7 @@ positionts_normalized = scaler_yts.fit_transform(positionts.reshape(-1, 1))
 X_test = np.column_stack((forcets_normalized, np.zeros((forcets_normalized.shape[0],1))))
 y_test = positionts_normalized
 
-###########################pre processing data
+########################### pre processing data
 
 X_train = X_train.reshape((1,X_train.shape[0],X_train.shape[1]))
 y_train = y_train.reshape((1,y_train.shape[0],1))
@@ -85,7 +88,7 @@ y_val = y_val.reshape((1,y_val.shape[0],1))
 X_test = X_test.reshape((1,X_test.shape[0],X_test.shape[1]))
 y_test = y_test.reshape((1,y_test.shape[0],1))
 
-#################### model
+########################### model
 model=Sequential()
 model.add(SimpleRNN(6, input_shape=(X_train.shape[1],X_train.shape[2]), activation='linear',return_sequences=True))  #use_bias=False
 model.add(Dense(1, activation='linear', use_bias=False))
@@ -113,7 +116,7 @@ for epoch in range(epochs):
 #model.save('/content/new_drive/MyDrive/trained_SRNN.keras')
 #trainedmodel = tf.keras.models.load_model('/content/new_drive/MyDrive/trained_SRNN.keras')
 
-############################### test with a data set like the train data
+########################### test with a data set like the train data
 train_predictions = trainedmodel.predict(X_train)
 test_predictions = trainedmodel.predict(X_test)
 pred = scaler_yts.inverse_transform(test_predictions.reshape((test_predictions.shape[0], test_predictions.shape[1])))
@@ -171,7 +174,7 @@ plt.ylabel('Acc (m/s^2)', size = 12)
 plt.show()
 
 
-##################################### sawtooth force input test
+########################### sawtooth force input test
 m = 24
 c = 110
 k = 2500
@@ -244,7 +247,7 @@ plt.ylabel('Acc (m/s^2)', size = 12)
 plt.show()
 
 
-############################ sin force input test
+########################### sin force input test
 m = 24
 c = 110
 k = 2500
