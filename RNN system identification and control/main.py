@@ -110,8 +110,8 @@ for epoch in range(epochs):
     validation_loss_list.append(history.history['val_loss'])
     model_weights_list.append(model.get_weights())
 
-#model.save('/content/new_drive/MyDrive/trained_SRNN.h5')
-#trainedmodel = tf.keras.models.load_model('/content/new_drive/MyDrive/trained_SRNN.h5')
+#model.save('/content/new_drive/MyDrive/trained_SRNN.keras')
+#trainedmodel = tf.keras.models.load_model('/content/new_drive/MyDrive/trained_SRNN.keras')
 
 ############################### test with a data set like the train data
 train_predictions = trainedmodel.predict(X_train)
