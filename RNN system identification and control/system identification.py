@@ -17,8 +17,11 @@ import tensorflow as tf
 from scipy.signal import sawtooth
 
 
-########################### Define the mass-spring-damper system parameters
-
+###########################  Generate data
+'''
+in this section we simulated a mass-spring-damper system in response to a square signal as force. 
+then we organised this force and response data to make train, test and validation data for training the model.
+'''
 m = 24
 c = 110
 k = 2500
@@ -77,8 +80,44 @@ positionts_normalized = scaler_yts.fit_transform(positionts.reshape(-1, 1))
 X_test = np.column_stack((forcets_normalized, np.zeros((forcets_normalized.shape[0],1))))
 y_test = positionts_normalized
 
-########################### pre processing data
+'''
+# you can use this code to plot train, test and validation data
+def fourplot(a, X_train, y_train, accelerationtr, velocitytr):
+    plt.figure(figsize=(12, 8))
+    plt.subplot(4, 1, 1)
+    plt.scatter(a, X_train[:,0])
+    #plt.plot(t, pos)
+    plt.ylabel('force scaled train')
+    plt.title('Mass-Spring-Damper System Response')
 
+    plt.subplot(4, 1, 2)
+    plt.scatter(a, y_train)
+    #plt.plot(t, vel)
+    plt.ylabel('Position')
+
+    plt.subplot(4, 1, 3)
+    plt.scatter(a, velocitytr)
+    #plt.plot(t, acc)
+    plt.ylabel('Velocity ')
+    plt.xlabel('Time (s)')
+
+    plt.subplot(4, 1, 4)
+    plt.scatter(a, accelerationtr)
+    #plt.plot(t, acc)
+    plt.ylabel('Acceleration ')
+    plt.xlabel('Time (s)')
+
+    plt.show()
+
+fourplot(ttr, X_train, y_train, accelerationtr, velocitytr)
+fourplot(tv, X_val, y_val, accelerationv, velocityv)
+fourplot(tts, X_test, y_test, accelerationts, velocityts)
+'''
+
+########################### pre processing data
+'''
+the most important part of this project was to determine how should we determine input and ouput of our network. 
+'''
 X_train = X_train.reshape((1,X_train.shape[0],X_train.shape[1]))
 y_train = y_train.reshape((1,y_train.shape[0],1))
 
