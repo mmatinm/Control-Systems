@@ -1,6 +1,6 @@
 
 % Load and preprocess data
-%data = load('D:\Edu\System Identification\sim 1\data1.mat'); 
+data = load('D:\Edu\System Identification\sim 1\data1.mat'); 
 uct = detrend(data.uc);
 yct = detrend(data.yc);
 uwt = detrend(data.uw);
