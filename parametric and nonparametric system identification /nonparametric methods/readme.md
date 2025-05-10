@@ -10,9 +10,10 @@ The dataset consists of a single `.mat` file located in this directory and conta
 - `yw` – Output corresponding to `uw` (white noise)
 - `uc` – Input signal 
 - `yc` – Output corresponding to `uc` (colored noise)
+The true system that generated this data is unknown.
 
 **MATLAB File:** `data1.mat`
-The true system that generated this data is unknown.
+
 
 ## Nonparametric Methods
 
@@ -25,7 +26,7 @@ These methods help estimate system characteristics directly from data without fi
 **Description:**  
 Cross-correlation between input and output helps identify delays and linear dependence. Autocorrelation of residuals evaluates whether the noise is white (uncorrelated), important for assessing model assumptions.
 
-**MATLAB File:** `data1.mat`
+**MATLAB File:** `S1correlation.m`
 
 **Plots:**
 
