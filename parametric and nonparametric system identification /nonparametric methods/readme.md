@@ -25,17 +25,23 @@ These methods help estimate system characteristics directly from data without fi
 ### Correlation Analysis
 
 **Description:**  
-Cross-correlation between input and output helps identify delays and linear dependence. Autocorrelation of residuals evaluates whether the noise is white (uncorrelated), important for assessing model assumptions.
+Correlation analysis estimates the system's impulse response by computing the cross-correlation between the input and output signals. This approach assumes a linear time-invariant system and white input noise. The impulse response provides insight into the system's dynamics, such as delay and transient behavior.
+
+The analysis also includes checking the autocorrelation of the residuals to determine if the remaining noise is uncorrelated (i.e., white). This is important for validating the assumptions of the model and identifying potential structure in the noise that the model fails to capture.
+
+In this project, the effect of the averaging data size \( N \) on the correlation estimates was evaluated using four different values: **1024**, **2048**, **4096**, and **8192**. 
+
+**Dataset Size:** 16,384 rows
 
 **MATLAB File:** `S1correlation.m`
 
 **Plots:**
 
-- Evaluated impulse responses:
-  ![Cross-correlation](images/corr2.jpg)
+- Evaluated impulse responses ( system with white noise ):
+  ![corr2](images/corr2.jpg)
 
-- Residual autocorrelation:
-  ![Residual autocorrelation](images/corr3.jpg)
+- Evaluated impulse responses ( system with colored noise ):
+  ![corr3](images/corr3.jpg)
 
 ---
 
