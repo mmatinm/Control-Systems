@@ -4,13 +4,14 @@ This directory contains MATLAB code for a system identification project performe
 
 ## 📊 Dataset
 
-The dataset consists of a single `.mat` file located in the `data/` directory and contains four columns:
+The dataset consists of a single `.mat` file located in this directory and contains four columns:
 
-- `u1` – Input signal (white noise)
-- `y1` – Output corresponding to `u1`
-- `u2` – Input signal (colored noise)
-- `y2` – Output corresponding to `u2`
+- `uw` – Input signal
+- `yw` – Output corresponding to `uw` (white noise)
+- `uc` – Input signal 
+- `yc` – Output corresponding to `uc` (colored noise)
 
+**MATLAB File:** `data1.mat`
 The true system that generated this data is unknown.
 
 ## Nonparametric Methods
@@ -28,7 +29,7 @@ Cross-correlation between input and output helps identify delays and linear depe
 
 **Plots:**
 
-- Cross-correlation:
+- Evaluated impulse responses:
   ![Cross-correlation](results/cross_correlation.png)
 
 - Residual autocorrelation:
