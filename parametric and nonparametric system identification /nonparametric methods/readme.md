@@ -10,6 +10,7 @@ The dataset consists of a single `.mat` file located in this directory and conta
 - `yw` – Output corresponding to `uw` (white noise)
 - `uc` – Input signal 
 - `yc` – Output corresponding to `uc` (colored noise)
+
 The true system that generated this data is unknown.
 
 **MATLAB File:** `data1.mat`
