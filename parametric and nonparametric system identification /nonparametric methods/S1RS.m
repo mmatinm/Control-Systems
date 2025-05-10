@@ -1,7 +1,7 @@
 
 
 % Load and preprocess data
-%data = load('D:\Edu\System Identification\sim 1\data403208017.mat'); 
+data = load('D:\data1.mat');  % change this
 uct = detrend(data.uc);
 yct= detrend(data.yc);
 uwt= detrend(data.uw);
