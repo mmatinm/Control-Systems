@@ -32,10 +32,10 @@ Cross-correlation between input and output helps identify delays and linear depe
 **Plots:**
 
 - Evaluated impulse responses:
-  ![Cross-correlation](results/cross_correlation.png)
+  ![Cross-correlation](images/corr2.jpg)
 
 - Residual autocorrelation:
-  ![Residual autocorrelation](results/residual_autocorrelation.png)
+  ![Residual autocorrelation](images/corr3.jpg)
 
 ---
 
