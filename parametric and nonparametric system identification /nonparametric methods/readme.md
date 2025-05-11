@@ -129,10 +129,31 @@ These windows determine how the data is weighted across neighboring frequencies 
 **Plots:**
 
 - SPA magnitude ( system with white noise ):
-  ![ME5](images/ME5.jpg)
+  ![SPA3](images/SPA3.jpg)
 
 - SPA magnitude ( system with colored noise ):
-  ![ME7](images/ME7.jpg)
+  ![Spa4](images/Spa4.jpg)
 
 ---
+
+### Residual Analysis
+
+**Description:**  
+This section focuses on estimating the noise (residual) spectrum of the system. The estimation is carried out using the SPA method along with the Blackman-Tukey algorithm.
+
+The analysis is performed on both white and colored noise datasets using different windows and smoothing parameters (e.g., \( \gamma \)). The results illustrate how well the residual resembles white noise, which is critical for validating model quality.
+
+**Dataset Sizes Used:** 8192, 16384  
+**Windows Used:** Various (e.g., Blackman-Tukey)
+
+**MATLAB File:** `S1RS.m`
+
+**Plots:**
+
+- SPA magnitude ( system with white noise ):
+  ![SPA3](images/SPA3.jpg)
+
+- SPA magnitude ( system with colored noise ):
+  ![Spa4](images/Spa4.jpg)
+
 
