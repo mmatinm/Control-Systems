@@ -2,6 +2,14 @@
 
 This directory contains MATLAB code for a system identification project performed on simulated data. The project follows methodologies from Lennart Ljung's *System Identification: Theory for the User*, using both **nonparametric** and **parametric** modeling techniques.
 
+## Table of Contents
+- [Dataset](#-dataset)
+- [Nonparametric Methods](#nonparametric-methods)
+  - [Correlation Analysis](#correlation-analysis)
+  - [ETFE](#etfe-empirical-transfer-function-estimate)
+  - [Mean ETFE](#mean-etfe-averaged-etfe)
+  - [SPA](#spa-spectral-analysis)
+
 ## 📊 Dataset
 
 The dataset consists of a single `.mat` file located in this directory and contains four columns:
@@ -50,33 +58,54 @@ In this project, the effect of the averaging data size \( N \) on the correlatio
 **Description:**  
 ETFE provides a raw estimate of the frequency response by dividing the FFT of the output by the FFT of the input. It's fast but may be noisy due to lack of smoothing.
 
-**MATLAB File:** `scripts/etfe_analysis.m`
+**MATLAB File:** `S1ETFE.m`
 
 **Plots:**
 
-- ETFE magnitude:
-  ![ETFE Magnitude](results/etfe_magnitude.png)
+- ETFE magnitude ( system with white noise ):
+  ![ETFE3](images/ETFE3.jpg)
 
-- ETFE phase:
-  ![ETFE Phase](results/etfe_phase.png)
+- ETFE magnitude ( system with colored noise ):
+  ![ETFE5](images/ETFE5.jpg)
 
 ---
-
 ### Mean ETFE (Averaged ETFE)
 
-**Description:**  
-An improved version of ETFE that averages spectral estimates across multiple segments, reducing variance and improving readability of the frequency response.
+**Description:**
 
-**MATLAB File:** `scripts/mean_etfe_analysis.m`
+This section improves upon the basic ETFE method by reducing variance through averaging. The dataset is split into multiple equal-length segments, and the ETFE is computed separately for each segment. These individual estimates are then averaged to produce a smoother and more reliable frequency response.
 
-**Plots:**
+Two common averaging methods are used:
 
-- Mean ETFE magnitude:
-  ![Mean ETFE Magnitude](results/mean_etfe_magnitude.png)
 
-- Mean ETFE phase:
-  ![Mean ETFE Phase](results/mean_etfe_phase.png)
+#### Method 1: Uniform Averaging
 
+- **Weighting:** Each segment contributes equally to the final average, regardless of signal strength or noise characteristics.
+
+**MATLAB File:** `S1METFE1.m`
+
+**Plot:**
+
+- Mean ETFE magnitude ( system with white noise ):
+  ![ME1](images/ME1.jpg)
+
+- Mean ETFE magnitude ( system with colored noise ):
+  ![ME3](images/ME3.jpg)
+
+
+#### Method 2: Weighted by Input Spectrum Magnitude
+
+- **Weighting:** Segments are weighted according to the power of their input signal at each frequency. This gives more influence to segments with stronger input energy, which typically results in a lower-variance estimate.
+
+**MATLAB File:** `S1METFE2.m`
+
+**Plot:**
+
+- Mean ETFE magnitude ( system with white noise ):
+  ![ME5](images/ME5.jpg)
+
+- Mean ETFE magnitude ( system with colored noise ):
+  ![ME7](images/ME7.jpg)
 ---
 
 ### SPA (Spectral Analysis)
