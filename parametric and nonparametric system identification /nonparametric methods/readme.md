@@ -3,12 +3,15 @@
 This directory contains MATLAB code for a system identification project performed on simulated data. The project follows methodologies from Lennart Ljung's *System Identification: Theory for the User*, using both **nonparametric** and **parametric** modeling techniques.
 
 ## Table of Contents
-- [Dataset](#-dataset)
+- [ Dataset](#-dataset)
 - [Nonparametric Methods](#nonparametric-methods)
   - [Correlation Analysis](#correlation-analysis)
-  - [ETFE](#etfe-empirical-transfer-function-estimate)
-  - [Mean ETFE](#mean-etfe-averaged-etfe)
-  - [SPA](#spa-spectral-analysis)
+  - [ETFE (Empirical Transfer Function Estimate)](#etfe-empirical-transfer-function-estimate)
+  - [Mean ETFE (Averaged ETFE)](#mean-etfe-averaged-etfe)
+    - [Method 1: Uniform Averaging](#method-1-uniform-averaging)
+    - [Method 2: Weighted by Input Spectrum Magnitude](#method-2-weighted-by-input-spectrum-magnitude)
+  - [SPA (Spectral Analysis)](#spa-spectral-analysis)
+  - [Residual Analysis](#residual-analysis)
 
 ## 📊 Dataset
 
@@ -141,19 +144,18 @@ These windows determine how the data is weighted across neighboring frequencies 
 **Description:**  
 This section focuses on estimating the noise (residual) spectrum of the system. The estimation is carried out using the SPA method along with the Blackman-Tukey algorithm.
 
-The analysis is performed on both white and colored noise datasets using different windows and smoothing parameters (e.g., \( \gamma \)). The results illustrate how well the residual resembles white noise, which is critical for validating model quality.
+The analysis is performed on both white and colored noise datasets using different windows and smoothing parameters . The results illustrate how well the residual resembles white noise, which is critical for validating model quality.
 
-**Dataset Sizes Used:** 8192, 16384  
 **Windows Used:** Various (e.g., Blackman-Tukey)
 
 **MATLAB File:** `S1RS.m`
 
 **Plots:**
 
-- SPA magnitude ( system with white noise ):
-  ![SPA3](images/SPA3.jpg)
+- RS magnitude ( system with white noise ):
+  ![RS2](images/RS2.jpg)
 
-- SPA magnitude ( system with colored noise ):
-  ![Spa4](images/Spa4.jpg)
+- RS magnitude ( system with colored noise ):
+  ![RS1](images/RS1.jpg)
 
 
