@@ -111,17 +111,28 @@ Two common averaging methods are used:
 ### SPA (Spectral Analysis)
 
 **Description:**  
-SPA uses smoothed spectral density estimates to compute the system's frequency response and includes confidence intervals, providing insight into uncertainty.
+The Spectral Analysis (SPA) method is an alternative to ETFE that addresses some of its limitations. Unlike ETFE, SPA applies a frequency-domain window to smooth the estimate and reduce variance. This technique allows better observation of the system's behavior around a specific frequency by averaging nearby frequencies.
 
-**MATLAB File:** `scripts/spa_analysis.m`
+The SPA estimate is computed by weighting the ETFE values of each segment using a frequency window centered at the frequency of interest. This results in a smoother and more reliable frequency response estimate, particularly useful in noisy environments.
+
+Several window types are used for this purpose, including:
+
+- Constant
+- Parzen
+- Hamming
+- Bartlett
+
+These windows determine how the data is weighted across neighboring frequencies during averaging. The choice of window affects the trade-off between bias and variance in the frequency response estimate.
+
+**MATLAB File:** `S1SPA.m`
 
 **Plots:**
 
-- SPA Bode plot with confidence bounds:
-  ![SPA Bode Plot](results/spa_bode.png)
+- SPA magnitude ( system with white noise ):
+  ![ME5](images/ME5.jpg)
 
-- Noise spectrum estimate:
-  ![Noise Spectrum](results/spa_noise_spectrum.png)
+- SPA magnitude ( system with colored noise ):
+  ![ME7](images/ME7.jpg)
 
 ---
 
