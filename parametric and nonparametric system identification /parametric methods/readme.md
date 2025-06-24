@@ -2,33 +2,24 @@
 # Parametric System Identification
 
 This directory contains implementations of parametric system identification methods based on Ljung's "System Identification: Theory for the User." We applied these methods to a dataset from an unknown system, utilizing two types of inputs: Gaussian noise and PRBS (Pseudo-Random Binary Sequence). The selected configuration for the non-parametric identification was a gamma of 800 with a Hamming window.
----
 
+---
 ## Table of Contents
 - [Preprocessing](#Preprocessing)
-- [Dataset and Configuration](#dataset-and-configuration)
-- [Data Preprocessing](#data-preprocessing)
-- [Methodology](#methodology)
-  - [Order Estimation](#order-estimation)
-  - [Residue Testing](#residue-testing)
-  - [Model Reduction](#model-reduction)
-- [Parametric Identification Techniques](#parametric-identification-techniques)
-  - [ARX Model](#arx-model)
-  - [ARMAX Model](#armax-model)
-  - [OE Model](#oe-model)
-  - [BJ Model](#bj-model)
-  - [General Model](#general-model)
-- [Results and Analysis](#results-and-analysis)
-- [Images](#images)
+- [ARX Model](#arx-model)
+- [ARMAX Model](#armax-model)
+- [OE Model](#oe-model)
+- [BJ Model](#bj-model)
+- [General Model](#general-model)
 - [Conclusion](#conclusion)
 ---
 
 ## Preprocessing
 
-The `preprocessing.m` file handles the following tasks:
+The `Preprocessing.m` file handles the following tasks:
 
-- **Data Preprocessing**: Selecting Gaussian data for identification and PRBS for testing, as Gaussian data has higher energy and more autocorrelation.
-- **Noise Characteristic Estimation**: Identifying the presence of colored noise (low-pass) in the system.
+- **Data Preprocessing**: Selecting Gaussian data for identification and PRBS for testing, as Gaussian data has higher energy and more autocorrelation at zero lag.
+- **Noise Characteristic Estimation**: Identifying the Noise Spectrum, here we have colored noise (low-pass) in the system.
 - **Delay Estimation**: Estimating the system delay using impulse response.
 - **Order Estimation**: Using the N4SID method for order estimation.
 
@@ -36,12 +27,12 @@ From this point forward, we implement the following procedures for parametric sy
 
 1. **Order Estimation**: For each method, we use AIC (Akaike Information Criterion), FPE (Final Prediction Error), and FIT (Fit Percentage).
 2. **Residual Analysis**: Conducting a Residual Test on the test data (PRBS).
-3. **Model Reduction**: Testing to see if the fitted model can be reduced.
+3. **Model Reduction**: Reducing model orders to check for over-parameterization and model simplification
 
 In each file, we have plotted AIC, FPE, FIT percentages alongside zero-pole plots, residual tests, and simulated comparisons. However, for simplicity, not all plots are included in this README.
 
 ---
-## ARX Model (`arx.m`)
+## ARX Model (`ARX.m`)
 
 In this file, we implemented the following methods for parametric identification using Gaussian data:
 
@@ -58,7 +49,7 @@ Although recursive methods do not have significant meaning in the context of the
 ![ARX Fit Percentages](images/arx_fit_percentages.png)
 
 ---
-## ARMAX Model (`armax.m`)
+## ARMAX Model (`ARMAX.m`)
 
 In this file, we implemented the following methods for parametric identification using Gaussian data:
 
@@ -122,70 +113,4 @@ For the given system, the fitted ARMAX model was determined to be the best fit. 
 ![Uncertainty Matrix](images/uncertainty_matrix.png)
 ![Bode Plot](images/bode_plot.png)
 
-
-
-
-
-
-
----
-we implemented parametric identification on a dataset from an unkown system based on Ljung's System Identification: Theory for the User
-two inputs gaussian and PRBS 
-the selected configuration from nonparametric identification.  gamma 800 with hamming window
-
-preprocessing.m file
-data preprocessing
-selecting gaussian data for identification and prbs for test. because gaussian has more energy in a sense and more auto correlation
-finding noise chracteristic ( in this system we have a colored noise (low pass))
-delay estimation by impulse response
-order estimation by n4sid
-
-from this point forward we implement the following presiture for parametric system identification:
-1. order estimation for each method by AIC and FPE and FIT 
-2. implement and analysis of Residue test on test data (PRBS)
-3. reducing the model order and test to see if the fitted model can be reduced 
-in each file we have plotted AIC , FPE , FIT percent alongside zero pole plot , residual test and simulated comparison but we did not provide all of them for simplicity of read me file to read.
-
-arx.m file
-in this file we implemented LS(least square), IV (instrument variable), RLS(Recursive least square) and RIV methods ( although recursive methods doesnt have meaning in case of arx model because arx has linear regressor but we used this for learning purpose) to parametrically identification of the system using gaussian data. then we used AIC , FPE and FIT method alongside residue test and  model reduction on PRBS data to test the identification performance.
-as a result we found out that using IV method can land significantly better results than others. below you can see the simulated response comparsion. and fit percent of different arx models fitted by IV method
-
-image
-image
-
-armax.m file 
-in this file we implemented GN(gauss newton), RML(recursive maximum likelyhood) and RPLR to parametrically identification of the system using gaussian data. then we used AIC , FPE and FIT method alongside residue test and  model reduction on PRBS data to test the identification performance.
-as a result we found out that using GN method can land significantly better results than others. below you can see the simulated response comparsion. and description of the best fitted model of armax by GN
-
-image
-image
-
-OE.m
-in this file we implemented GN(gauss newton), RLS and RIV to parametrically identification of the system using gaussian data by OE (output error) model. then we used AIC , FPE and FIT method alongside residue test and  model reduction on PRBS data to test the identification performance.
-as a result we found out that using GN method can land significantly better results than others. below you can see the simulated response comparsion. and description of the best fitted model of OE by GN
-
-image
-
-image
-
-BJ.m
-in this file we implemented GN(gauss newton) and RPLR to parametrically identification of the system using gaussian data by BJ (Box and Jeinciens) model. then we used AIC , FPE and FIT method alongside residue test and  model reduction on PRBS data to test the identification performance.
-as a result we found out that using GN method can land significantly better results than others. below you can see the simulated response comparsion. and description of the best fitted model of BJ by GN
-
-image
-image
-
-Genearl.m
-in this file we implemented GN(gauss newton) to parametrically identification of the system using gaussian data by a general model. then we used AIC , FPE and FIT method alongside residue test and  model reduction on PRBS data to test the identification performance.
-as a result we found out that using GN method can land significantly better results than others. below you can see the simulated response comparsion. and description of the best fitted model of General by GN
-
-image
-image
-
-
-at last for the given system the fitted and metiond armax system was the best fit. here you can see its residual test for the best system along with uncertainity matrix of parameters using getcov command in matlab and bode plot ofthe best model.
-
-image 
-image 
-image
 
