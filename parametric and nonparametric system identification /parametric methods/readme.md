@@ -6,11 +6,11 @@ This directory contains implementations of parametric system identification meth
 ---
 ## Table of Contents
 - [Preprocessing](#Preprocessing)
-- [ARX Model](#ARX-Model)
-- [ARMAX Model](#ARMAX-Model)
-- [Output Error Model](#Output-Error-Model)
-- [Box-Jenkins Model](#Box-Jenkins-Model)
-- [General Model](#general-model)
+- [ARX-Model](#ARX-Model)
+- [ARMAX-Model](#ARMAX-Model)
+- [Output-Error-Model](#Output-Error-Model)
+- [Box-Jenkins-Model](#Box-Jenkins-Model)
+- [General-Model](#general-model)
 - [Conclusion](#conclusion)
 ---
 
