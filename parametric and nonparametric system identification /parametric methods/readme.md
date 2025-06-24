@@ -49,9 +49,9 @@ Although recursive methods do not have significant meaning in the context of the
 ![ARX Fit Percentages](images/arx_fit_percentages.png)
 
 ---
-## ARMAX Model (`ARMAX.m`)
+## ARMAX Model 
 
-In this file, we implemented the following methods for parametric identification using Gaussian data:
+In `ARMAX.m` file, we implemented the following methods for parametric identification using Gaussian data:
 
 - **GN (Gauss-Newton)**
 - **RML (Recursive Maximum Likelihood)**
@@ -64,9 +64,9 @@ We applied AIC, FPE, and FIT methods alongside the Residual Test and model reduc
 ![ARMAX Response Comparison](images/armax_response_comparison.png)
 ![ARMAX Best Fitted Model](images/armax_best_fitted_model.png)
 
-## Output Error Model (`OE.m`)
+## Output Error Model 
 
-In this file, we implemented the following methods for parametric identification using Gaussian data by the Output Error (OE) model:
+In `OE.m` file, we implemented the following methods for parametric identification using Gaussian data by the Output Error (OE) model:
 
 - **GN (Gauss-Newton)**
 - **RLS (Recursive Least Squares)**
@@ -80,9 +80,9 @@ We applied AIC, FPE, and FIT methods alongside the Residual Test and model reduc
 ![OE Best Fitted Model](images/oe_best_fitted_model.png)
 
 ---
-## Box-Jenkins Model (`BJ.m`)
+## Box-Jenkins Model 
 
-In this file, we implemented the following methods for parametric identification using Gaussian data by the Box-Jenkins (BJ) model:
+In `BJ.m` file, we implemented the following methods for parametric identification using Gaussian data by the Box-Jenkins (BJ) model:
 
 - **GN (Gauss-Newton)**
 - **RPLR (Recursive Prediction Error Method)**
@@ -95,9 +95,9 @@ We applied AIC, FPE, and FIT methods alongside the Residual Test and model reduc
 ![BJ Best Fitted Model](images/bj_best_fitted_model.png)
 
 ---
-## General Model (`General.m`)
+## General Model 
 
-In this file, we implemented the GN (Gauss-Newton) method for parametric identification using Gaussian data by a general model. We applied AIC, FPE, and FIT methods alongside the Residual Test and model reduction on PRBS data to evaluate identification performance.
+In `General.m` file, we implemented the GN (Gauss-Newton) method for parametric identification using Gaussian data by a general model. We applied AIC, FPE, and FIT methods alongside the Residual Test and model reduction on PRBS data to evaluate identification performance.
 
 **Results**: The GN method yielded significantly better results than the others. Below are the simulated response comparisons and a description of the best-fitted General model by the GN method.
 
