@@ -32,9 +32,9 @@ From this point forward, we implement the following procedures for parametric sy
 In each file, we have plotted AIC, FPE, FIT percentages alongside zero-pole plots, residual tests, and simulated comparisons. However, for simplicity, not all plots are included in this README.
 
 ---
-## ARX Model (`ARX.m`)
+## ARX Model
 
-In this file, we implemented the following methods for parametric identification using Gaussian data:
+In `ARX.m` file, we implemented the following methods for parametric identification using Gaussian data:
 
 - **LS (Least Squares)**
 - **IV (Instrumental Variable)**
