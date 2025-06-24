@@ -31,6 +31,10 @@ From this point forward, we implement the following procedures for parametric sy
 
 In each file, we have plotted AIC, FPE, FIT percentages alongside zero-pole plots, residual tests, and simulated comparisons. However, for simplicity, not all plots are included in this README.
 
+![1](images/1.jpg)
+
+![6](images/6.jpg)
+
 ---
 ## ARX Model
 
@@ -45,8 +49,10 @@ Although recursive methods do not have significant meaning in the context of the
 
 **Results**: The IV method yielded significantly better results than the others. Below are the simulated response comparisons and the fit percentages of different ARX models fitted by the IV method.
 
-![ARX Response Comparison](images/arx_response_comparison.png)
-![ARX Fit Percentages](images/arx_fit_percentages.png)
+![arx2](images/arx2.jpg)
+
+### fit percentages of different ARX models fitted by the IV method
+![iv3](images/iv3.jpg)
 
 ---
 ## ARMAX Model 
@@ -61,8 +67,9 @@ We applied AIC, FPE, and FIT methods alongside the Residual Test and model reduc
 
 **Results**: The GN method provided significantly better results than the others. Below are the simulated response comparisons and a description of the best-fitted ARMAX model by the GN method.
 
-![ARMAX Response Comparison](images/armax_response_comparison.png)
-![ARMAX Best Fitted Model](images/armax_best_fitted_model.png)
+![armax10](images/armax10.jpg)
+
+![iv33](images/iv33.jpg)
 
 ## Output Error Model 
 
@@ -76,7 +83,8 @@ We applied AIC, FPE, and FIT methods alongside the Residual Test and model reduc
 
 **Results**: The GN method yielded significantly better results than the others. Below are the simulated response comparisons and a description of the best-fitted OE model by the GN method.
 
-![OE Response Comparison](images/oe_response_comparison.png)
+![oe7](images/oe7.jpg)
+
 ![OE Best Fitted Model](images/oe_best_fitted_model.png)
 
 ---
@@ -91,7 +99,8 @@ We applied AIC, FPE, and FIT methods alongside the Residual Test and model reduc
 
 **Results**: The GN method provided significantly better results than the others. Below are the simulated response comparisons and a description of the best-fitted BJ model by the GN method.
 
-![BJ Response Comparison](images/bj_response_comparison.png)
+![bj9](images/bj9.jpg)
+
 ![BJ Best Fitted Model](images/bj_best_fitted_model.png)
 
 ---
@@ -101,7 +110,8 @@ In `General.m` file, we implemented the GN (Gauss-Newton) method for parametric 
 
 **Results**: The GN method yielded significantly better results than the others. Below are the simulated response comparisons and a description of the best-fitted General model by the GN method.
 
-![General Response Comparison](images/general_response_comparison.png)
+![G4](images/G4.jpg)
+
 ![General Best Fitted Model](images/general_best_fitted_model.png)
 
 ---
@@ -109,8 +119,13 @@ In `General.m` file, we implemented the GN (Gauss-Newton) method for parametric 
 
 For the given system, the fitted ARMAX model was determined to be the best fit. Below are the residual tests for the best system, along with the uncertainty matrix of parameters using the `getcov` command in MATLAB and the Bode plot of the best model.
 
-![Residual Test](images/residual_test.png)
-![Uncertainty Matrix](images/uncertainty_matrix.png)
-![Bode Plot](images/bode_plot.png)
+### residual tests ( best system (up) and reduced model (down) )
+![armax11](images/armax11.jpg)
+
+### uncertainty matrix of parameters
+![image](images/image.png)
+
+### Bode plot of the best model
+![b1](images/b1.jpg)
 
 
