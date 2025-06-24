@@ -2,6 +2,26 @@
 # Parametric System Identification
 
 This directory contains implementations of parametric system identification methods based on Ljung's "System Identification: Theory for the User." We applied these methods to a dataset from an unknown system, utilizing two types of inputs: Gaussian noise and PRBS (Pseudo-Random Binary Sequence). The selected configuration for the non-parametric identification was a gamma of 800 with a Hamming window.
+---
+
+## Table of Contents
+- [Preprocessing](#Preprocessing)
+- [Dataset and Configuration](#dataset-and-configuration)
+- [Data Preprocessing](#data-preprocessing)
+- [Methodology](#methodology)
+  - [Order Estimation](#order-estimation)
+  - [Residue Testing](#residue-testing)
+  - [Model Reduction](#model-reduction)
+- [Parametric Identification Techniques](#parametric-identification-techniques)
+  - [ARX Model](#arx-model)
+  - [ARMAX Model](#armax-model)
+  - [OE Model](#oe-model)
+  - [BJ Model](#bj-model)
+  - [General Model](#general-model)
+- [Results and Analysis](#results-and-analysis)
+- [Images](#images)
+- [Conclusion](#conclusion)
+---
 
 ## Preprocessing
 
@@ -20,6 +40,7 @@ From this point forward, we implement the following procedures for parametric sy
 
 In each file, we have plotted AIC, FPE, FIT percentages alongside zero-pole plots, residual tests, and simulated comparisons. However, for simplicity, not all plots are included in this README.
 
+---
 ## ARX Model (`arx.m`)
 
 In this file, we implemented the following methods for parametric identification using Gaussian data:
@@ -36,6 +57,7 @@ Although recursive methods do not have significant meaning in the context of the
 ![ARX Response Comparison](images/arx_response_comparison.png)
 ![ARX Fit Percentages](images/arx_fit_percentages.png)
 
+---
 ## ARMAX Model (`armax.m`)
 
 In this file, we implemented the following methods for parametric identification using Gaussian data:
@@ -66,6 +88,7 @@ We applied AIC, FPE, and FIT methods alongside the Residual Test and model reduc
 ![OE Response Comparison](images/oe_response_comparison.png)
 ![OE Best Fitted Model](images/oe_best_fitted_model.png)
 
+---
 ## Box-Jenkins Model (`BJ.m`)
 
 In this file, we implemented the following methods for parametric identification using Gaussian data by the Box-Jenkins (BJ) model:
@@ -80,6 +103,7 @@ We applied AIC, FPE, and FIT methods alongside the Residual Test and model reduc
 ![BJ Response Comparison](images/bj_response_comparison.png)
 ![BJ Best Fitted Model](images/bj_best_fitted_model.png)
 
+---
 ## General Model (`General.m`)
 
 In this file, we implemented the GN (Gauss-Newton) method for parametric identification using Gaussian data by a general model. We applied AIC, FPE, and FIT methods alongside the Residual Test and model reduction on PRBS data to evaluate identification performance.
@@ -89,6 +113,7 @@ In this file, we implemented the GN (Gauss-Newton) method for parametric identif
 ![General Response Comparison](images/general_response_comparison.png)
 ![General Best Fitted Model](images/general_best_fitted_model.png)
 
+---
 ## Conclusion
 
 For the given system, the fitted ARMAX model was determined to be the best fit. Below are the residual tests for the best system, along with the uncertainty matrix of parameters using the `getcov` command in MATLAB and the Bode plot of the best model.
