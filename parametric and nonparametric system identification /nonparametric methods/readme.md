@@ -1,4 +1,4 @@
-# System Identification Using Simulated Data
+# Non Parametric System Identification
 
 This directory contains MATLAB code for a system identification project performed on simulated data. The project follows methodologies from Lennart Ljung's *System Identification: Theory for the User*, using both **nonparametric** and **parametric** modeling techniques.
 
