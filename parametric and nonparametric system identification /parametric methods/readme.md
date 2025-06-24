@@ -69,7 +69,8 @@ We applied AIC, FPE, and FIT methods alongside the Residual Test and model reduc
 
 ![armax10](images/armax10.jpg)
 
-![iv33](images/iv33.jpg)
+### description of the best-fitted ARMAX model
+![image2](images/image2.png)
 
 ## Output Error Model 
 
@@ -85,7 +86,8 @@ We applied AIC, FPE, and FIT methods alongside the Residual Test and model reduc
 
 ![oe7](images/oe7.jpg)
 
-![OE Best Fitted Model](images/oe_best_fitted_model.png)
+### description of the best-fitted OE model
+![image3](images/image3.png)
 
 ---
 ## Box-Jenkins Model 
@@ -101,7 +103,8 @@ We applied AIC, FPE, and FIT methods alongside the Residual Test and model reduc
 
 ![bj9](images/bj9.jpg)
 
-![BJ Best Fitted Model](images/bj_best_fitted_model.png)
+### description of the best-fitted BJ model
+![image4](images/image4.png)
 
 ---
 ## General Model 
@@ -112,7 +115,8 @@ In `General.m` file, we implemented the GN (Gauss-Newton) method for parametric 
 
 ![G4](images/G4.jpg)
 
-![General Best Fitted Model](images/general_best_fitted_model.png)
+### description of the best-fitted General model
+![image5](images/image5.png)
 
 ---
 ## Conclusion
@@ -123,7 +127,7 @@ For the given system, the fitted ARMAX model was determined to be the best fit. 
 ![armax11](images/armax11.jpg)
 
 ### uncertainty matrix of parameters
-![image](images/image.png)
+![image1](images/image1.png)
 
 ### Bode plot of the best model
 ![b1](images/b1.jpg)
