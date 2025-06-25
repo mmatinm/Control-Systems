@@ -1,6 +1,6 @@
 # Control Systems
 
-Welcome to the **Control Systems** repository! This repository is dedicated to various control system projects
+Welcome to the **Control Systems** repository! This repository is dedicated to various control system projects.
 Each folder inside this repo is a standalone project with its own README file, code and results.
 
 ---
